@@ -65,7 +65,7 @@ class ViewController: NSViewController {
         let type = store.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         store.requestAccessToAccounts(with: type, options: nil) { granted, error in
             guard let twitterAccounts = store.accounts(with: type), granted else {
-                self.alert(error: error)
+                self.alert(error: error!)
                 return
             }
             if twitterAccounts.isEmpty {
